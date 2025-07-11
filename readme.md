@@ -56,17 +56,23 @@ npm run dev:proxy -- YourComponentName
 Edit the `.env` file to match your setup:
 
 ```env
-# Path to mitmproxy binary (omit if using Docker version)
-MITMPROXY_PATH=C:\\Users\\you\\Downloads\\mitmproxy.exe
+# Base URL to your Dynamics CRM instance
+CRM_URL_PATH=https://yourcrm.crm.dynamics.com/
 
-# The name of your PCF component (used in matching and proxy paths)
-PCF_COMPONENT_NAME=OrdersList
+# Path to your local mitmproxy executable
+MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe
 
-# The incoming path from Dynamics to intercept
-PCF_EXPECTED_PATH=/webresources/cc_Avanade.{PCF_NAME}/bundle.js
+# The expected URL to match/intercept from Dynamics
+PCF_EXPECTED_PATH=/webresources/{PCF_NAME}/bundle.js
 
-# The local bundle path served by http-server
-PCF_BUNDLE_PATH=/bundle.js
+# Path to your Chrome executable
+CHROME_EXE_PATH=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
+
+# Port for the proxy server (mitmproxy and default port is 8080)
+PROXY_PORT=8080
+
+# Port for the local HTTP server serving the bundle (default port is 8082)
+HTTP_SERVER_PORT=8082
 ```
 ---
 
