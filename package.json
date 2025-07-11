@@ -1,24 +1,12 @@
 {
-  "name": "pcf-proxy-tools",
+  "name": "pcf-cli-proxy-tools",
   "version": "1.0.0",
-  "description": "Template/tool for developing PCF components locally using mitmproxy and http-server",
-  "scripts": {
-    "dev:proxy": "node dev/proxy.js"
+  "bin": {
+    "pcf-cli-proxy-tools": "index.js"
   },
-  "dependencies": {
-    "http-server": "^14.1.1"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1"
-  },
-  "keywords": [
-    "pcf",
-    "powerapps",
-    "dynamics",
-    "mitmproxy",
-    "local-dev",
-    "proxy",
-    "http-server"
+  "files": [
+    "index.js",
+    "template/"
   ],
   "author": "David Øvrelid",
   "license": "MIT"
