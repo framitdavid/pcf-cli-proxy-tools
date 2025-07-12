@@ -97,7 +97,12 @@ To build:
 npm run build
 ```
 
-> ⚠️ Without building, you may be serving outdated code from a previous `bundle.js`.
+or 
+```bash
+npm run start:watch
+```
+This will automatically rebuild your bundle.js whenever changes are made — no need to trigger the build manually.
+
 
 ---
 
