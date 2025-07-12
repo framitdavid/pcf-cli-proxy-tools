@@ -102,14 +102,14 @@ YourPcfComponent/
 
 ---
 
-## 🔐 HTTPS Support
+## 🔐 HTTPS Support (one time setup)
 
 To enable HTTPS interception (needed for Dynamics):
 
 1. Run the proxy
-2. Open [http://mitm.it](http://mitm.it) in Chrome
+2. Open [http://mitm.it](http://mitm.it) in the same Chrome window ss the script opned
 3. Download and install the certificate for your OS
-4. Restart Chrome
+4. Restart npm run dev:proxy -- YourComponentName
 
 ---
 
