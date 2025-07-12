@@ -3,7 +3,7 @@ from mitmproxy import http
 
 PCF_NAME = os.getenv("PCF_COMPONENT_NAME")
 PCF_EXPECTED_PATH = os.getenv("PCF_EXPECTED_PATH", "/webresources/{PCF_NAME}/bundle.js")
-HTTP_SERVER_PORT = os.getenv("HTTP_SERVER_PORT", 8082)
+HTTP_SERVER_PORT = int(os.getenv("HTTP_SERVER_PORT", "8082"))
 
 def request(flow: http.HTTPFlow) -> None:
     if not PCF_NAME:
