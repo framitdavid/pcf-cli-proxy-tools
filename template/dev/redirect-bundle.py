@@ -11,9 +11,6 @@ def request(flow: http.HTTPFlow) -> None:
 
     expected_substring = PCF_EXPECTED_PATH.replace("{PCF_NAME}", PCF_NAME)
 
-    print(f"🌐 Requested URL: {flow.request.pretty_url}")
-    print(f"🔍 Checking for match against: {expected_substring}")
-
     if expected_substring in flow.request.url:
         print(f"🔁 Redirecting to localhost bundle.js")
         flow.request.host = "localhost"
