@@ -3,7 +3,7 @@
 **Develop PowerApps PCF components locally — right inside Dynamics 365 — without deployments, and no Fiddler.**
 
 This CLI tool intercepts requests from Dynamics to your PCF component and redirects them to your local dev server.  
-The result? You can test and iterate instantly — without deploying, packaging, or using Fiddler.
+The result? You can test and iterate faster — without deploying, packaging, or using Fiddler.
 
 ✅ **Zero deployments**  
 ✅ **Zero packaging**  
@@ -89,6 +89,22 @@ npm run dev:proxy -- OrdersList
 
 ---
 
+## ⚠️ Avoid Caching Issues
+
+Dynamics 365 aggressively caches webresources like `bundle.js`.
+
+To make sure you're seeing your **latest code**, always do a **hard refresh** in the Dynamics tab that opens:
+
+```
+➡️ Press Ctrl + Shift + R (or Cmd + Shift + R on Mac)
+```
+
+This ensures the latest local file is used instead of a cached version.
+
+> 💡 Do this after every rebuild or restart of the dev server.
+
+---
+
 ## 📁 Folder structure
 
 ```
@@ -107,9 +123,9 @@ YourPcfComponent/
 To enable HTTPS interception (needed for Dynamics):
 
 1. Run the proxy
-2. Open [http://mitm.it](http://mitm.it) in the same Chrome window ss the script opned
+2. Open [http://mitm.it](http://mitm.it) in the same Chrome window the script opened
 3. Download and install the certificate for your OS
-4. Restart npm run dev:proxy -- YourComponentName
+4. Restart `npm run dev:proxy -- YourComponentName`
 
 ---
 
