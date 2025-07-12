@@ -12,12 +12,12 @@ This tool transparently intercepts requests from Dynamics to your PCF component 
 
 ## Features
 
-- 🌐 mitmproxy-based request interception
-- ⚡ Runs `http-server` for your local bundle
-- 🧪 Opens Chrome with preconfigured proxy flags
-- 🔍 Full DevTools and HTTP request inspection
-- 💻 Works with existing PCF component folders
-- 🔐 HTTPS support via mitmproxy certificate
+- mitmproxy-based request interception
+- Runs `http-server` for your local bundle
+- Opens Chrome with preconfigured proxy flags
+- Full DevTools and HTTP request inspection
+- Works with existing PCF component folders
+- HTTPS support via mitmproxy certificate
 
 ---
 
