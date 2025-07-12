@@ -3,7 +3,7 @@
 **Develop PowerApps PCF components locally — right inside Dynamics 365 — without deployments, and no Fiddler.**
 
 This CLI tool intercepts requests from Dynamics to your PCF component and redirects them to your local dev server.  
-The result? You can test and iterate faster — without deploying, packaging, or using Fiddler.
+The result? You can test and iterate instantly — without deploying, packaging, or using Fiddler.
 
 ✅ **Zero deployments**  
 ✅ **Zero packaging**  
@@ -86,6 +86,20 @@ Example:
 ```bash
 npm run dev:proxy -- OrdersList
 ```
+
+---
+
+### 🔄 Remember to Build Your PCF Component
+
+This proxy serves the latest `bundle.js` from your `out/` folder — but **you must manually trigger a build** of your PCF component to generate the updated output.
+
+To build:
+
+```bash
+npm run build
+```
+
+> ⚠️ Without building, you may be serving outdated code from a previous `bundle.js`.
 
 ---
 
