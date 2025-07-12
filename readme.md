@@ -58,7 +58,7 @@ Copy `.env.example` to `.env` and update the paths to match your system:
 CRM_URL_PATH=https://yourcrm.crm.dynamics.com/
 
 # Path to your local mitmproxy executable
-MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe
+MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe   (download mitmproxy here: https://mitmproxy.org/downloads/)
 
 # The expected URL to match/intercept from Dynamics
 PCF_EXPECTED_PATH=/webresources/{PCF_NAME}/bundle.js
