@@ -25,7 +25,6 @@ It handles **everything** automatically:
 - Starts `mitmproxy` to intercept requests from Dynamics
 - Launches `http-server` to serve your local bundle
 - Opens Chrome with the right proxy settings
-- Enables full DevTools inspection
 - Works instantly with your existing PCF component folders
 
 > No clicking around in Fiddler. No deployment delay. Just fast iteration and full control.
