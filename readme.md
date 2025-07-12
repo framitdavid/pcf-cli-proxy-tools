@@ -1,29 +1,40 @@
-# 🧪 PCF Proxy Dev
+# ⚡ PCF Proxy Tools
 
-Develop PowerApps PCF components locally inside Dynamics 365 — without deploying or packaging.
+**Develop PowerApps PCF components locally — right inside Dynamics 365 — without deployments, and no Fiddler.**
 
-This tool transparently intercepts requests from Dynamics to your PCF component and redirects them to your local development server, so you can test your code instantly.
+This CLI tool intercepts requests from Dynamics to your PCF component and redirects them to your local dev server.  
+The result? You can test and iterate instantly — without deploying, packaging, or using Fiddler.
 
-✅ NO FIDDLER NEEDED!!  
-✅ No solution deployment  
-✅ Works with your existing PCF setup
-
----
-
-## 🚀 Features
-
-- 🌐 mitmproxy-based request interception
-- ⚡ Runs `http-server` for your local bundle
-- 🧪 Opens Chrome with preconfigured proxy flags
-- 🔍 Full DevTools and HTTP request inspection
-- 💻 Works with existing PCF component folders
-- 🔐 HTTPS support via mitmproxy certificate
+✅ **Zero deployments**  
+✅ **Zero packaging**  
+✅ **No Fiddler**  
+✅ **Works with your existing PCF setup**  
+✅ **One command to launch everything**
 
 ---
 
-## 📦 Quickstart
+## 🚀 Why You’ll Love This
 
-### 🧩 Add to your existing PCF component folder
+Once it’s set up, **you only need one command to start local development**:
+
+```bash
+npm run dev:proxy -- YourComponentName
+```
+
+It handles **everything** automatically:
+- Starts `mitmproxy` to intercept requests from Dynamics
+- Launches `http-server` to serve your local bundle
+- Opens Chrome with the right proxy settings
+- Enables full DevTools inspection
+- Works instantly with your existing PCF component folders
+
+> No clicking around in Fiddler. No deployment delay. Just fast iteration and full control.
+
+---
+
+## 🧪 Quickstart
+
+### 1. Add to your existing PCF component folder
 
 ```bash
 cd src/YourPcfComponent/
@@ -38,36 +49,9 @@ This will:
 
 ---
 
-## ▶️ Start your local dev proxy
+### 2. Configure `.env`
 
-```bash
-npm run dev:proxy -- YourComponentName
-```
-
-Example:
-
-```bash
-npm run dev:proxy -- OrdersList
-```
-
----
-
-## 🗂 Folder structure
-
-```
-YourPcfComponent/
-├── dev/
-│   ├── proxy.js
-│   └── redirect-bundle.py
-├── .env.example
-├── package.json
-```
-
----
-
-## ⚙️ .env configuration
-
-Create a `.env` file based on `.env.example` and update it for your local environment:
+Copy `.env.example` to `.env` and update the paths to match your system:
 
 ```env
 # Base URL to your Dynamics CRM instance
@@ -91,31 +75,61 @@ HTTP_SERVER_PORT=8082
 
 ---
 
-## 🔐 HTTPS support
+### 3. Start your local dev proxy (every time you want to test)
 
-To make HTTPS work with mitmproxy, follow these steps:
+```bash
+npm run dev:proxy -- YourComponentName
+```
 
-1. Start the proxy
-2. Open [http://mitm.it](http://mitm.it) in Chrome
+Example:
+
+```bash
+npm run dev:proxy -- OrdersList
+```
+
+---
+
+## 📁 Folder structure
+
+```
+YourPcfComponent/
+├── dev/
+│   ├── proxy.js
+│   └── redirect-bundle.py
+├── .env.example
+├── package.json
+```
+
+---
+
+## 🔐 HTTPS Support (one time setup)
+
+To enable HTTPS interception (needed for Dynamics):
+
+1. Run the proxy
+2. Open [http://mitm.it](http://mitm.it) in the same Chrome window ss the script opned
 3. Download and install the certificate for your OS
-4. Restart Chrome
+4. Restart npm run dev:proxy -- YourComponentName
 
 ---
 
-## 🙌 Why not Fiddler?
+## ❌ Why NOT Fiddler?
 
-Fiddler is heavyweight, GUI-based, and doesn't integrate well with automated workflows.  
-This setup is headless, scriptable, and made for developers who want a lightweight CLI-based workflow.
+- ❌ GUI-based and heavyweight  
+- ❌ Hard to automate  
+- ❌ Requires manual setup each time
+
+With **PCF Proxy Tools**, everything is scriptable, fast, and built for modern CLI-based workflows. Ideal for real developers who want control.
 
 ---
 
-## 🧠 Credits
+## 🙌 Credits
 
 Created by [@davidovrelid](https://github.com/framitdavid)  
-Shared with ❤️ to the Power Platform community
+Shared with ❤️ for the Power Platform community
 
 ---
 
-## 🪪 License
+## 📄 License
 
 MIT
