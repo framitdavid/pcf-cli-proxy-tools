@@ -1,4 +1,4 @@
-# 🧪 PCF Proxy Dev
+# PCF Proxy Tools
 
 Develop PowerApps PCF components locally inside Dynamics 365 — without deploying or packaging.
 
@@ -10,7 +10,7 @@ This tool transparently intercepts requests from Dynamics to your PCF component 
 
 ---
 
-## 🚀 Features
+## Features
 
 - 🌐 mitmproxy-based request interception
 - ⚡ Runs `http-server` for your local bundle
@@ -23,7 +23,7 @@ This tool transparently intercepts requests from Dynamics to your PCF component 
 
 ## 📦 Quickstart
 
-### 🧩 Add to your existing PCF component folder
+### Add to your existing PCF component folder
 
 ```bash
 cd src/YourPcfComponent/
@@ -38,7 +38,7 @@ This will:
 
 ---
 
-## ▶️ Start your local dev proxy
+## Start your local dev proxy
 
 ```bash
 npm run dev:proxy -- YourComponentName
@@ -65,7 +65,7 @@ YourPcfComponent/
 
 ---
 
-## ⚙️ .env configuration
+## .env configuration
 
 Create a `.env` file based on `.env.example` and update it for your local environment:
 
@@ -91,7 +91,7 @@ HTTP_SERVER_PORT=8082
 
 ---
 
-## 🔐 HTTPS support
+## HTTPS support
 
 To make HTTPS work with mitmproxy, follow these steps:
 
@@ -102,7 +102,7 @@ To make HTTPS work with mitmproxy, follow these steps:
 
 ---
 
-## 🙌 Why not Fiddler?
+## Why not Fiddler?
 
 Fiddler is heavyweight, GUI-based, and doesn't integrate well with automated workflows.  
 This setup is headless, scriptable, and made for developers who want a lightweight CLI-based workflow.
@@ -116,6 +116,6 @@ Shared with ❤️ to the Power Platform community
 
 ---
 
-## 🪪 License
+## License
 
 MIT
