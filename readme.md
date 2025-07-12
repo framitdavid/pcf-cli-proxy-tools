@@ -5,8 +5,7 @@
 This CLI tool intercepts requests from Dynamics to your PCF component and redirects them to your local dev server.  
 The result? You can test and iterate instantly — without deploying, packaging, or using Fiddler.
 
-✅ **Zero deployments**  
-✅ **Zero packaging**  
+✅ **Zero packing and deployments**
 ✅ **No Fiddler**  
 ✅ **Works with your existing PCF setup**  
 ✅ **One command to launch everything**
