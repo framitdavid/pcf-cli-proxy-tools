@@ -1,0 +1,136 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --color-dynamics-blue: #0078D4;
+  --color-powerapps-purple: #742774;
+  --color-fluent-neutral-gray: #f3f2f1;
+  --color-fluent-dark-gray: #323130;
+  --color-fluent-light-blue-gray: #eff6fc;
+  --color-success-green: #107C10;
+  --color-warning-yellow: #FFD335;
+  --color-error-red: #D13438;
+
+  /* Light mode overrides */
+  --ifm-color-primary: var(--color-dynamics-blue);
+  --ifm-color-primary-dark: #005a9e;
+  --ifm-color-primary-darker: #004578;
+  --ifm-color-primary-light: #2899f5;
+  --ifm-color-primary-lighter: #c7e0f4;
+  --ifm-background-color: #fff;
+  --ifm-navbar-background-color: var(--color-dynamics-blue);
+  --ifm-navbar-link-color: #fff;
+  --ifm-navbar-link-hover-color: var(--color-powerapps-purple);
+  --ifm-link-color: var(--color-powerapps-purple);
+  --ifm-link-hover-color: var(--color-dynamics-blue);
+  --ifm-menu-color-background-active: #e6e6fa;
+  --ifm-menu-color-background-hover: #e6e6fa;
+  --ifm-font-color-base: var(--color-fluent-dark-gray);
+  --ifm-alert-success-background-color: #e6f4ea;
+  --ifm-alert-success-border-color: var(--color-success-green);
+  --ifm-alert-success-color: var(--color-success-green);
+  --ifm-alert-warning-background-color: #fffbe6;
+  --ifm-alert-warning-border-color: var(--color-warning-yellow);
+  --ifm-alert-warning-color: var(--color-warning-yellow);
+  --ifm-alert-danger-background-color: #fde7e9;
+  --ifm-alert-danger-border-color: var(--color-error-red);
+  --ifm-alert-danger-color: var(--color-error-red);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-dynamics-blue: #2899f5;
+    --color-powerapps-purple: #c7a0da;
+    --color-fluent-neutral-gray: #23272f;
+    --color-fluent-dark-gray: #f3f2f1;
+    --color-fluent-light-blue-gray: #22334d;
+    --ifm-background-color: #181a1b;
+    --ifm-navbar-background-color: #23272f;
+    --ifm-navbar-link-color: #fff;
+    --ifm-navbar-link-hover-color: var(--color-powerapps-purple);
+    --ifm-link-color: var(--color-powerapps-purple);
+    --ifm-link-hover-color: var(--color-dynamics-blue);
+    --ifm-menu-color-background-active: #2d3653;
+    --ifm-menu-color-background-hover: #2d3653;
+    --ifm-font-color-base: var(--color-fluent-dark-gray);
+    --ifm-alert-success-background-color: #223d29;
+    --ifm-alert-success-border-color: var(--color-success-green);
+    --ifm-alert-success-color: var(--color-success-green);
+    --ifm-alert-warning-background-color: #4d4422;
+    --ifm-alert-warning-border-color: var(--color-warning-yellow);
+    --ifm-alert-warning-color: var(--color-warning-yellow);
+    --ifm-alert-danger-background-color: #4d2223;
+    --ifm-alert-danger-border-color: var(--color-error-red);
+    --ifm-alert-danger-color: var(--color-error-red);
+  }
+}
+
+/* Navbar logo/title */
+.navbar__title, .navbar__link {
+  color: #fff !important;
+}
+
+.navbar__link--active {
+  color: var(--color-powerapps-purple) !important;
+}
+
+/* Sidebar active/highlight */
+.menu__link--active, .menu__link--active:not(.menu__link--sublist) {
+  background: #e6e6fa !important;
+  color: var(--color-dynamics-blue) !important;
+}
+
+.menu__link:hover {
+  background: #f3e6fa !important;
+  color: var(--color-powerapps-purple) !important;
+}
+
+/* Sidebar bakgrunn */
+.theme-doc-sidebar-container {
+  background: #f7faff;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-doc-sidebar-container {
+    background: #23272f;
+  }
+}
+
+/* Cards og alerts */
+.card, .alert {
+  background: #f7faff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+}
+@media (prefers-color-scheme: dark) {
+  .card, .alert {
+    background: #23272f;
+  }
+}
+
+/* Buttons */
+.button.button--primary {
+  background: var(--color-dynamics-blue);
+  border-color: var(--color-dynamics-blue);
+  color: #fff;
+}
+.button.button--primary:hover {
+  background: var(--color-powerapps-purple);
+  border-color: var(--color-powerapps-purple);
+}
+
+/* General text */
+body {
+  color: var(--color-fluent-dark-gray);
+  background: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--color-fluent-dark-gray);
+    background: #181a1b;
+  }
+}
+
