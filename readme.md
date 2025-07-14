@@ -5,8 +5,7 @@
 This CLI tool intercepts requests from Dynamics to your PCF component and redirects them to your local dev server.  
 The result? You can test and iterate instantly — without deploying, packaging, or using Fiddler.
 
-✅ **Zero deployments**  
-✅ **Zero packaging**  
+✅ **Zero packing and deployments**
 ✅ **No Fiddler**  
 ✅ **Works with your existing PCF setup**  
 ✅ **One command to launch everything**
@@ -25,7 +24,6 @@ It handles **everything** automatically:
 - Starts `mitmproxy` to intercept requests from Dynamics
 - Launches `http-server` to serve your local bundle
 - Opens Chrome with the right proxy settings
-- Enables full DevTools inspection
 - Works instantly with your existing PCF component folders
 
 > No clicking around in Fiddler. No deployment delay. Just fast iteration and full control.
@@ -58,7 +56,7 @@ Copy `.env.example` to `.env` and update the paths to match your system:
 CRM_URL_PATH=https://yourcrm.crm.dynamics.com/
 
 # Path to your local mitmproxy executable
-MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe
+MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe   (download mitmproxy here: https://mitmproxy.org/downloads/)
 
 # The expected URL to match/intercept from Dynamics
 PCF_EXPECTED_PATH=/webresources/{PCF_NAME}/bundle.js
@@ -89,6 +87,41 @@ npm run dev:proxy -- OrdersList
 
 ---
 
+### 🔄 Remember to Build Your PCF Component
+
+This proxy serves the latest `bundle.js` from your `out/` folder — but **you must manually trigger a build** of your PCF component to generate the updated output.
+
+To build:
+
+```bash
+npm run build
+```
+
+or 
+```bash
+npm run start:watch
+```
+This will automatically rebuild your bundle.js whenever changes are made — no need to trigger the build manually.
+
+
+---
+
+## ⚠️ Avoid Caching Issues
+
+Dynamics 365 aggressively caches webresources like `bundle.js`.
+
+To make sure you're seeing your **latest code**, always do a **hard refresh** in the Dynamics tab that opens:
+
+```
+➡️ Press Ctrl + Shift + R (or Cmd + Shift + R on Mac)
+```
+
+This ensures the latest local file is used instead of a cached version.
+
+> 💡 Do this after every rebuild or restart of the dev server.
+
+---
+
 ## 📁 Folder structure
 
 ```
@@ -107,9 +140,9 @@ YourPcfComponent/
 To enable HTTPS interception (needed for Dynamics):
 
 1. Run the proxy
-2. Open [http://mitm.it](http://mitm.it) in the same Chrome window ss the script opned
+2. Open [http://mitm.it](http://mitm.it) in the same Chrome window the script opened
 3. Download and install the certificate for your OS
-4. Restart npm run dev:proxy -- YourComponentName
+4. Restart `npm run dev:proxy -- YourComponentName`
 
 ---
 
