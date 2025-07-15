@@ -6,7 +6,7 @@
 |----------------------|--------------------------------------------------|----------|---------|
 | CRM_URL_PATH         | Base URL to your Dynamics CRM instance           | Yes      |         |
 | MITMPROXY_PATH       | Path to your local mitmproxy executable          | Yes      |         |
-| PCF_EXPECTED_PATH    | URL pattern to match/intercept from Dynamics     | No       | `/webresources/{PCF_NAME}/bundle.js` |
+| PCF_EXPECTED_PATH    | URL pattern to match/intercept from Dynamics. <br /> _Note: This will be treated as a regular expression string, any resource after the trailing slash (`/`) will be served through the proxy (e.g. `bundle.js`, `css/style.css`...)_     | No       | `/webresources/{PCF_NAME}/` |
 | CHROME_EXE_PATH      | Path to your Chrome executable                   | Yes      |         |
 | PROXY_PORT           | Port for the proxy server (mitmproxy)            | No       | 8080    |
 | HTTP_SERVER_PORT     | Port for the local HTTP server                   | No       | 8082    |

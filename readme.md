@@ -64,7 +64,7 @@ CRM_URL_PATH=https://yourcrm.crm.dynamics.com/
 MITMPROXY_PATH=C:\\path\\to\\mitmproxy.exe   (download mitmproxy here: https://mitmproxy.org/downloads/)
 
 # The expected URL to match/intercept from Dynamics
-PCF_EXPECTED_PATH=/webresources/{PCF_NAME}/bundle.js
+PCF_EXPECTED_PATH=/webresources/{PCF_NAME}/
 
 # Path to your Chrome executable
 CHROME_EXE_PATH=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe

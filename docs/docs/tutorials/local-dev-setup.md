@@ -35,7 +35,13 @@ Open `.env` and set the following:
 
 - `CRM_URL_PATH`: Your Dynamics 365 instance URL.
 - `MITMPROXY_PATH`: Path to your local mitmproxy executable.
-- `PCF_EXPECTED_PATH`: The URL pattern Dynamics uses to load your bundle (usually `/webresources/{PCF_NAME}/bundle.js`).
+- `PCF_EXPECTED_PATH`: The URL pattern Dynamics uses to load your bundle (usually `/webresources/{PCF_NAME}/`). This will be treated as a regular expression string, any resource after the trailing slash (`/`) will be served through the proxy, for example:
+
+    | Requested URL | Mapped Location |
+    | --- | --- |
+    | https://yourorg.crm.dynamics.com/.../webresources/YourPcfControl/bundle.js | YourPcfControl/out/controls/YourPcfControl/bundle.js |
+    | https://yourorg.crm.dynamics.com/.../webresources/YourPcfControl/css/style.css | YourPcfControl/out/controls/YourPcfControl/css/style.css |
+
 - `CHROME_EXE_PATH`: Path to your Chrome executable.
 - `PROXY_PORT`: Port for mitmproxy (default: 8080).
 - `HTTP_SERVER_PORT`: Port for the local HTTP server (default: 8082).
