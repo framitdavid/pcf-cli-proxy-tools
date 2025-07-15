@@ -15,8 +15,8 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://framitdavid.github.io',
-  baseUrl: '/pcf-cli-proxy-tools/',
+  url: 'https://pcfproxy.dev',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
